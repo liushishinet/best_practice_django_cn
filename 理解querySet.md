@@ -24,6 +24,7 @@ queryset 结果缓存
 
 
 > print([e.headline for e in Entry.objects.all()])
+
 > print([e.pub_date for e in Entry.objects.all()])
 
 
@@ -31,7 +32,9 @@ queryset 结果缓存
 
 
 > queryset = Entry.objects.all() #将语句赋值给一个变量
+
 > print([p.headline for p in queryset]) #只在这里触发一次sql求值.
+
 > print([p.pub_date for p in queryset]) #这里直接用如上结果
 
 
@@ -39,7 +42,9 @@ queryset 结果缓存
 
 
 > queryset = Entry.objects.all()
+
 > print queryset[5] #执行sql
+
 > print queryset[0:5] #执行sql
 
 
